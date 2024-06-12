@@ -1,0 +1,30 @@
+﻿<Page x:Class="PROG6212POEPART1.RegisterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROG6212POEPART1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegisterPage">
+
+    <Grid Background="White">
+        <Label x:Name="label" Content="REGISTER" HorizontalAlignment="Left" Margin="165,23,0,0" VerticalAlignment="Top" Height="88" Width="278" FontSize="72" FontFamily="Impact" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.233"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.593"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="label1" Content="Username:" HorizontalAlignment="Left" Margin="146,141,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtUsernameRegister" HorizontalAlignment="Left" Margin="217,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="209"/>
+        <Label x:Name="label1_Copy" Content="Password:" HorizontalAlignment="Left" Margin="146,207,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtPasswordRegister" HorizontalAlignment="Left" Margin="217,211,0,0" VerticalAlignment="Top" Width="209" PasswordChar="●"/>
+        <Label x:Name="label1_Copy1" Content="Confirm password:" HorizontalAlignment="Left" Margin="100,274,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtConfirmPassword" HorizontalAlignment="Left" Margin="217,278,0,0" VerticalAlignment="Top" Width="209" PasswordChar="●"/>
+        <Button x:Name="btnEnter" Content="Enter" HorizontalAlignment="Left" Margin="241,345,0,0" VerticalAlignment="Top" Width="101" Click="btnEnter_Click"/>
+    </Grid>
+</Page>
