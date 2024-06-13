@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PROG7311POEPART2.AgriEnergyLibrary>
+
+@{
+    ViewData["Title"] = "FarmerList";
+}
+
+@if (TempData["AddFarmer"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["AddFarmer"]
+    </div>
+}
+
+@if (TempData["NoProduct"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["NoProduct"]
+    </div>
+}
+
+<h1>Farmers</h1>
+<p>
+    <a asp-action="CreateFarmer">Create A Farmer</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Farmers
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.ActionLink("View Products", "ViewProducts", new { id = item.username }) |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

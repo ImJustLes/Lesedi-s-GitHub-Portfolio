@@ -1,0 +1,62 @@
+﻿@model IEnumerable<PROG7311POEPART2.AgriEnergyLibrary>
+
+@{
+    ViewData["Title"] = "ViewProductsList";
+}
+
+<h1>Farmer's products</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="FilterProducts">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Product category</label>
+                <select class="form-control" name="txtCat">
+                    <option value="All">All</option>
+                    <option value="Energy Efficiency Measures">Energy Efficiency Measures</option>
+                    <option value="Solar Panels">Solar Panels</option>
+                    <option value="Dairy">Dairy</option>
+                    <option value="Vegetation">Vegetation</option>
+                    <option value="Carpentry">Carpentry</option>
+                    <option value="Metal works">Metal works</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Filter" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Product Category
+            </th>
+            <th>
+                Date of Publishment
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.prodName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prodCategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prodDate)
+            </td>
+        </tr>
+}
+        <a asp-action="LoadFarmers">Back to List</a>
+    </tbody>
+</table>

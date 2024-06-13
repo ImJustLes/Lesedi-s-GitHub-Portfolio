@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register & Login</title>
+
+    @if (TempData["RegisterSuccess"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["RegisterSuccess"]
+        </div>
+    }
+
+    @if (TempData["RegisterNameTaken"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["RegisterNameTaken"]
+        </div>
+    }
+
+    @if (TempData["PasswordMatch"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["PasswordMatch"]
+        </div>
+    }
+
+    @if (TempData["RegisterValues"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["RegisterValues"]
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Error"]
+        </div>
+    }
+
+    <link rel="stylesheet" href="~/css/RegisterLogin.css" type="text/css">
+    <script src="~/js/RegisterLogin.js" asp-append-version="true"></script>
+
+    <div class="FamrerLogin-page">
+        <div class="form">
+            <h1>Employee Register</h1>
+            <form class="login-form" method="post">
+                <input type="text" placeholder="Username" name="txtUsername" />
+                <input type="password" placeholder="Password" name="txtPassword" />
+                <input type="password" placeholder=" Confirm Password" name="txtPassword2" />
+                <button asp-action="EmployeeRegister">Register</button>
+                <p class="message">
+                    Not Registered?
+                    @Html.ActionLink("Sign in", "EmployeeLogin", new { controller = "Employee" })
+                </p>
+                <p class="message">
+                    Not an employee?
+                    @Html.ActionLink("Login as a farmer", "FarmerLogin", new { controller = "Farmer" })
+                </p>
+            </form>
+        </div>
+    </div>
+</head>
+<body>
+</body>
+</html>
+
+

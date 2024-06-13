@@ -1,0 +1,42 @@
+﻿@model IEnumerable<PROG7311POEPART2.AgriEnergyLibrary>
+
+@{
+    ViewData["Title"] = "ProductList";
+}
+
+<h1>List of Prodcuts</h1>
+
+<p>
+    <a asp-action="CreateProduct">Create A Product</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Date of Published
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.prodName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prodCategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prodDate)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,53 @@
+﻿@model PROG7311POEPART2.AgriEnergyLibrary
+
+@{
+    ViewData["Title"] = "CreateProduct";
+}
+
+<h4>Create a Product</h4>
+<hr />
+
+@if (TempData["DupProduct"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["DupProduct"]
+    </div>
+}
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateProduct">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="prodName" class="control-label">Name of product</label>
+                <input asp-for="prodName" class="form-control" name="txtProdName"/>
+                <span asp-validation-for="prodName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="prodCategory" class="control-label">Product category</label>
+                <select asp-for="prodCategory" class="form-control" name="txtCat">
+                    <option value="">None</option>
+                    <option value="Energy Efficiency Measures">Energy Efficiency Measures</option>
+                    <option value="Solar Panels">Solar Panels</option>
+                    <option value="Solar Water Pumps">Solar Water Pumps</option>
+                    <option value="Dairy">Dairy</option>
+                    <option value="Vegetation">Vegetation</option>
+                    <option value="Carpentry">Carpentry</option>
+                    <option value="Metal works">Metal works</option>
+                </select>
+                <span asp-validation-for="prodCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Date of when the product was made</label>
+                <input type="date" name="txtProdDate" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="LoadProducts">Back to List</a>
+</div>
+

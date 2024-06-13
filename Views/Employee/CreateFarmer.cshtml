@@ -1,0 +1,68 @@
+﻿@model PROG7311POEPART2.AgriEnergyLibrary
+
+@{
+    ViewData["Title"] = "CreateFarmer";
+}
+
+<h1>Create a Farmer</h1>
+
+@if (TempData["AddFarmer"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["AddFarmer"]
+    </div>
+}
+
+@if (TempData["RegisterNameTaken"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["RegisterNameTaken"]
+    </div>
+}
+
+@if (TempData["PasswordMatch"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["PasswordMatch"]
+    </div>
+}
+
+@if (TempData["RegisterValues"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["RegisterValues"]
+    </div>
+}
+
+<h4>Farmer Requirements</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateFarmer">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" method="post">
+                <label asp-for="username" class="control-label">Farmer name:</label>
+                <input asp-for="username" class="form-control" name="txtUsername"/>
+                <span asp-validation-for="username" class="text-danger"></span>
+            </div>
+            <div class="form-group" method="post">
+                <label class="control-label">Farmer password:</label>
+                <input type="password" class="form-control" name="txtPassword"/>
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+            <div class="form-group" method="post">
+                <label class="control-label">Confirm password:</label>
+                <input type="password" class="form-control" name="txtPassword2"/>
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create Farmer" class="btn btn-primary" /> 
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="LoadFarmer">Back to List</a>
+</div>
+
