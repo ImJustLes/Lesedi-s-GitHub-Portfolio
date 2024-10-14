@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\lesed\source\repos\PROG7312POEPART1\PROG7312POEPART1\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="LocalEventsAndAnnouncements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Main Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Report Issues Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Send Feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
