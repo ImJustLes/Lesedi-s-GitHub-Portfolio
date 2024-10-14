@@ -17,3 +17,4 @@ C:\Users\lesed\source\repos\PROG7312POEPART1\PROG7312POEPART1\obj\Release\net8.0
 C:\Users\lesed\source\repos\PROG7312POEPART1\PROG7312POEPART1\obj\Release\net8.0-windows\PROG7312POEPART1.pdb
 C:\Users\lesed\source\repos\PROG7312POEPART1\PROG7312POEPART1\obj\Release\net8.0-windows\PROG7312POEPART1.genruntimeconfig.cache
 C:\Users\lesed\source\repos\PROG7312POEPART1\PROG7312POEPART1\obj\Release\net8.0-windows\ref\PROG7312POEPART1.dll
+C:\Users\lesed\source\repos\PROG7312POEPART1\PROG7312POEPART1\obj\Release\net8.0-windows\PROG7312POEPART1.sourcelink.json

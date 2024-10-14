@@ -155,7 +155,6 @@
             // 
             // drpEvents
             // 
-            drpEvents.Enabled = false;
             drpEvents.Name = "drpEvents";
             drpEvents.Size = new System.Drawing.Size(312, 26);
             drpEvents.Text = "Local Events and Announcements";
@@ -199,6 +198,7 @@
             Controls.Add(btnSubmit);
             Controls.Add(label1);
             Controls.Add(txtLocation);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "Send_Feedback";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

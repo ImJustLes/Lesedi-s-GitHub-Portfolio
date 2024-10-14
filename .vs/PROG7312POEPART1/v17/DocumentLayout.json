@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|c:\\users\\lesed\\source\\repos\\prog7312poepart1\\prog7312poepart1\\report issues page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|solutionrelative:prog7312poepart1\\report issues page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|c:\\users\\lesed\\source\\repos\\prog7312poepart1\\prog7312poepart1\\localeventsandannouncements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|solutionrelative:prog7312poepart1\\localeventsandannouncements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\prog7312poepart1\\send feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|solutionrelative:prog7312poepart1\\send feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\prog7312poepart1\\main menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|solutionrelative:prog7312poepart1\\main menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\prog7312poepart1\\localeventsandannouncements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|solutionrelative:prog7312poepart1\\localeventsandannouncements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|c:\\users\\lesed\\source\\repos\\prog7312poepart1\\prog7312poepart1\\send feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,20 +27,8 @@
       "RelativeMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|solutionrelative:prog7312poepart1\\main menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\prog7312poepart1\\localeventsandannouncements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|solutionrelative:prog7312poepart1\\localeventsandannouncements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\prog7312poepart1\\main menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|solutionrelative:prog7312poepart1\\main menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\prog7312poepart1\\send feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|solutionrelative:prog7312poepart1\\send feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|c:\\users\\lesed\\source\\repos\\prog7312poepart1\\prog7312poepart1\\localeventsandannouncements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|solutionrelative:prog7312poepart1\\localeventsandannouncements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\prog7312poepart1\\report issues page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7E641548-F09A-4936-A1E5-EF3DD1499AFF}|PROG7312POEPART1\\PROG7312POEPART1.csproj|solutionrelative:prog7312poepart1\\report issues page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,7 +54,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
+              "Title": "Report Issues Page.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\PROG7312POEPART1\\Report Issues Page.cs",
+              "RelativeDocumentMoniker": "PROG7312POEPART1\\Report Issues Page.cs",
+              "ToolTip": "C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\PROG7312POEPART1\\Report Issues Page.cs [Design]",
+              "RelativeToolTip": "PROG7312POEPART1\\Report Issues Page.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T14:05:33.208Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Main Menu.cs",
               "DocumentMoniker": "C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\PROG7312POEPART1\\Main Menu.cs",
               "RelativeDocumentMoniker": "PROG7312POEPART1\\Main Menu.cs",
@@ -67,28 +79,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Send Feedback.cs",
               "DocumentMoniker": "C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\PROG7312POEPART1\\Send Feedback.cs",
               "RelativeDocumentMoniker": "PROG7312POEPART1\\Send Feedback.cs",
               "ToolTip": "C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\PROG7312POEPART1\\Send Feedback.cs",
               "RelativeToolTip": "PROG7312POEPART1\\Send Feedback.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwBMAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T11:47:32.425Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Report Issues Page.cs",
-              "DocumentMoniker": "C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\PROG7312POEPART1\\Report Issues Page.cs",
-              "RelativeDocumentMoniker": "PROG7312POEPART1\\Report Issues Page.cs",
-              "ToolTip": "C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\PROG7312POEPART1\\Report Issues Page.cs",
-              "RelativeToolTip": "PROG7312POEPART1\\Report Issues Page.cs",
-              "ViewState": "AgIAAJsAAAAAAAAAAADgv18AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T06:56:33.647Z",
               "EditorCaption": ""
             },
             {
@@ -105,37 +104,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Main Menu.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\PROG7312POEPART1\\Main Menu.cs",
               "RelativeDocumentMoniker": "PROG7312POEPART1\\Main Menu.cs",
               "ToolTip": "C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\PROG7312POEPART1\\Main Menu.cs [Design]",
               "RelativeToolTip": "PROG7312POEPART1\\Main Menu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T06:24:15.92Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-14T06:24:15.92Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Send Feedback.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\PROG7312POEPART1\\Send Feedback.cs",
               "RelativeDocumentMoniker": "PROG7312POEPART1\\Send Feedback.cs",
               "ToolTip": "C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\PROG7312POEPART1\\Send Feedback.cs [Design]",
               "RelativeToolTip": "PROG7312POEPART1\\Send Feedback.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T06:21:05.762Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-14T06:21:05.762Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "LocalEventsAndAnnouncements.cs",
               "DocumentMoniker": "C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\PROG7312POEPART1\\LocalEventsAndAnnouncements.cs",
               "RelativeDocumentMoniker": "PROG7312POEPART1\\LocalEventsAndAnnouncements.cs",
               "ToolTip": "C:\\Users\\lesed\\source\\repos\\PROG7312POEPART1\\PROG7312POEPART1\\LocalEventsAndAnnouncements.cs",
               "RelativeToolTip": "PROG7312POEPART1\\LocalEventsAndAnnouncements.cs",
-              "ViewState": "AgIAAJUAAAAAAAAAAAAswGIAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAYwLIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T21:16:22.329Z",
               "EditorCaption": ""

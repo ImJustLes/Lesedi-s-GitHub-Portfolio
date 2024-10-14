@@ -115,7 +115,10 @@ namespace PROG7312POEPART1
 
                 // Create the destination path by combining the destination folder and the file name
                 string destinationFilePath = Path.Combine(destinationFolder, Path.GetFileName(sourceFilePath));
-
+                if (File.Exists(destinationFilePath))
+                {
+                    File.Delete(destinationFilePath);
+                }
                 // Copy the file
                 File.Copy(sourceFilePath, destinationFilePath);
                 txtMediaName.Text = ofd.SafeFileName;
