@@ -27,4 +27,4 @@ ALTERNATIVELY, you can run the executable that is located within the PROG7312POE
 
 FEATURES:
 
-The application is allows the user to be able to report issues, send feedback to developers over concerns about the application and can now allow users to see and select and array of local events and announcements and be able to search those events/announcements.
+The application is allows the user to be able to report issues, which allows users to send issues concerning their municipal area, send feedback to developers over concerns about the application and can now allow users to see and select and array of local events and announcements and be able to search those events/announcements to find out more about them.
