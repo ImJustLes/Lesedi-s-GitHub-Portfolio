@@ -43,8 +43,10 @@
             drpNavigator = new System.Windows.Forms.ToolStripDropDownButton();
             mainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             reportIssueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            label2 = new System.Windows.Forms.Label();
             serviceRequestStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            lstRecommendations = new System.Windows.Forms.ListBox();
             toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,26 +58,26 @@
             // 
             // txtDescription
             // 
-            txtDescription.Location = new System.Drawing.Point(558, 233);
+            txtDescription.Location = new System.Drawing.Point(589, 285);
             txtDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtDescription.Name = "txtDescription";
             txtDescription.ReadOnly = true;
-            txtDescription.Size = new System.Drawing.Size(213, 164);
+            txtDescription.Size = new System.Drawing.Size(213, 277);
             txtDescription.TabIndex = 2;
             txtDescription.Text = "";
             // 
             // lstSearchResults
             // 
             lstSearchResults.FormattingEnabled = true;
-            lstSearchResults.Location = new System.Drawing.Point(200, 233);
+            lstSearchResults.Location = new System.Drawing.Point(90, 238);
             lstSearchResults.Name = "lstSearchResults";
-            lstSearchResults.Size = new System.Drawing.Size(283, 164);
+            lstSearchResults.Size = new System.Drawing.Size(375, 164);
             lstSearchResults.TabIndex = 3;
             lstSearchResults.SelectedIndexChanged += lstSearchResults_SelectedIndexChanged;
             // 
             // txtSearch
             // 
-            txtSearch.Location = new System.Drawing.Point(200, 145);
+            txtSearch.Location = new System.Drawing.Point(152, 141);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new System.Drawing.Size(571, 27);
             txtSearch.TabIndex = 4;
@@ -96,7 +98,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label6.Location = new System.Drawing.Point(200, 189);
+            label6.Location = new System.Drawing.Point(84, 185);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(116, 35);
             label6.TabIndex = 17;
@@ -106,7 +108,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label1.Location = new System.Drawing.Point(558, 189);
+            label1.Location = new System.Drawing.Point(589, 232);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(113, 35);
             label1.TabIndex = 18;
@@ -158,15 +160,6 @@
             reportIssueToolStripMenuItem.Text = "Report Issue";
             reportIssueToolStripMenuItem.Click += reportIssueToolStripMenuItem_Click;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(138, 148);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(56, 20);
-            label2.TabIndex = 20;
-            label2.Text = "Search:";
-            // 
             // serviceRequestStatusToolStripMenuItem
             // 
             serviceRequestStatusToolStripMenuItem.Enabled = false;
@@ -174,12 +167,41 @@
             serviceRequestStatusToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
             serviceRequestStatusToolStripMenuItem.Text = "Service Request Status";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(90, 144);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(56, 20);
+            label2.TabIndex = 20;
+            label2.Text = "Search:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label3.Location = new System.Drawing.Point(84, 436);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(219, 35);
+            label3.TabIndex = 21;
+            label3.Text = "Recommended:";
+            // 
+            // lstRecommendations
+            // 
+            lstRecommendations.FormattingEnabled = true;
+            lstRecommendations.Location = new System.Drawing.Point(90, 474);
+            lstRecommendations.Name = "lstRecommendations";
+            lstRecommendations.Size = new System.Drawing.Size(375, 124);
+            lstRecommendations.TabIndex = 22;
+            // 
             // LocalEventsAndAnnouncements
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
-            ClientSize = new System.Drawing.Size(915, 461);
+            ClientSize = new System.Drawing.Size(915, 731);
+            Controls.Add(lstRecommendations);
+            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(toolStrip1);
             Controls.Add(label1);
@@ -215,5 +237,7 @@
         private System.Windows.Forms.ToolStripMenuItem reportIssueToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem serviceRequestStatusToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox lstRecommendations;
     }
 }

@@ -13,14 +13,16 @@ namespace PROG7312POEPART1
         public DateTime Date  { get; set; }
         public string Location { get; set; }       
         public string Category { get; set; }
+        public int RecommendationScore { get; set; }
 
-        public EventsAndAnnouncements(string title, string description, DateTime date, string location,string category)
+        public EventsAndAnnouncements(string title, string description, DateTime date, string location,string category, int recommendationScore)
         {
             Title = title;
             Description = description;
             Date = date;
             Location = location;            
             Category = category;
+            RecommendationScore = recommendationScore;
         }
     }
 }
