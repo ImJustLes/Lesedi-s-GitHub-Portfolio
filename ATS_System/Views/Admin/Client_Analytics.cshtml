@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ATS_System.Models.Client>
+
+@{
+    ViewData["Title"] = "Client_Analytics";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main role="main">
+    <h1>Reports</h1>
+
+    <div class="report-section">
+        <h2>Client Progress</h2>
+        <div class="report-filters">
+            <label for="client">Client:</label>
+            <select id="client">
+                <option value="">All Clients</option>
+                <option value="client1">Client 1</option>
+                <option value="client2">Client 2</option>
+                <!-- More client options -->
+            </select>
+
+            <label for="timeframe">Timeframe:</label>
+            <select id="timeframe">
+                <option value="week">Last Week</option>
+                <option value="month">Last Month</option>
+                <option value="quarter">Last Quarter</option>
+                <option value="year">Last Year</option>
+            </select>
+        </div>
+        <div class="report-chart">
+            <!-- Client progress chart goes here -->
+        </div>
+    </div>
+
+    <div class="report-section">
+        <h2>Tutor Performance</h2>
+        <div class="report-filters">
+            <label for="tutor">Tutor:</label>
+            <select id="tutor">
+                <option value="">All Tutors</option>
+                <option value="tutor1">Tutor 1</option>
+                <option value="tutor2">Tutor 2</option>
+                <!-- More tutor options -->
+            </select>
+
+            <label for="timeframe">Timeframe:</label>
+            <select id="timeframe">
+                <option value="week">Last Week</option>
+                <option value="month">Last Month</option>
+                <option value="quarter">Last Quarter</option>
+                <option value="year">Last Year</option>
+            </select>
+        </div>
+        <div class="report-chart">
+            <!-- Tutor performance chart goes here -->
+        </div>
+    </div>
+
+    <div class="report-section">
+        <h2>Subject Area Demand</h2>
+        <div class="report-filters">
+            <label for="timeframe">Timeframe:</label>
+            <select id="timeframe">
+                <option value="week">Last Week</option>
+                <option value="month">Last Month</option>
+                <option value="quarter">Last Quarter</option>
+                <option value="year">Last Year</option>
+            </select>
+        </div>
+        <div class="report-chart">
+            <!-- Subject area demand chart goes here -->
+        </div>
+    </div>
+
+</main>

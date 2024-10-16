@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ATS_System.Models.Tutor>
+
+@{
+    ViewData["Title"] = "ATS_System";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<main role="main">
+        <h1>Applicant Tracking System</h1>
+
+    <form method="post">
+        <div class="filters">
+            <label for="subject">Subject:</label>
+            <select id="subject" name="cmbSubject">
+                <option value="">All Subjects</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <!-- More subject options -->
+            </select>
+
+            <label for="location">Location:</label>
+            <select id="location" name="cmbLocation">
+                <option value="">All Locations</option>
+                <option value="Port Elizabeth">Port Elizabeth</option>
+                <option value="Johannesburg">Johannesburg</option>
+                <option value="Pretoria">Pretoria</option>
+                <!-- More location options -->
+            </select>
+        <button asp-action="FilterTutors">Filter</button>
+        </div>
+    </form>
+
+        <ul class="application-list">
+            
+    @foreach(var tutor in Model) 
+    {
+        <li class ="application-item">
+            <h3>@tutor.Firstname</h3>
+                <p> Subject(s): 
+            @foreach (var subject in tutor.Subjects) 
+            {
+                 @subject                 
+            }
+            </p>
+            <p>Location: @tutor.Location</p>
+            <p class="meta">Submitted: 2023-05-14</p>
+        <div class="actions">
+            <button>Review</button>
+            <button>Accept</button>
+            <button>Reject</button>
+            <button>Shortlist</button>
+    
+            </div>       
+        </li>           
+    }
+
+    </ul>
+</main>

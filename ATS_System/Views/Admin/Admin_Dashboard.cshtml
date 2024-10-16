@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+    <main role="main">
+        <h1>Admin Dashboard</h1>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <i class="fas fa-users"></i>
+                <h2>Manage Employees</h2>
+                <p>Create and manage employee accounts for tutors and administrators.</p>
+            </div>
+
+            <div class="dashboard-card">
+                <a href="@Url.Action("ATS_System", "Admin")" class="elements">            
+                <i class="fas fa-file-alt"></i>
+                <h2>ATS System</h2>
+                <p>Review and process tutor applications, shortlist candidates, and hire tutors.</p>
+            </a>
+            </div>
+
+            <div class="dashboard-card">
+            <a href="@Url.Action("Client_Analytics", "Admin")" class="elements">
+                <i class="fas fa-chart-line"></i>
+                <h2>Client Progress</h2>
+                <p>Track and report on client progress and results over time.</p>
+                </a>
+            </div>
+
+            <div class="dashboard-card">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h2>Tutor Performance</h2>
+                <p>Monitor and analyze tutor performance based on client progress.</p>
+            </div>
+
+            <div class="dashboard-card">
+                <i class="fas fa-book"></i>
+                <h2>Subject Demand</h2>
+                <p>Analyze and report on subject areas with high demand for tutors.</p>
+            </div>
+
+            <div class="dashboard-card">
+                <i class="fas fa-cog"></i>
+                <h2>Settings</h2>
+                <p>Configure system settings and preferences.</p>
+            </div>
+        </div>
+    </main>
+</html>

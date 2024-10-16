@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="~/css/style_admin.css" asp-append-version="true" />
+    <title>Admin Dashboard - WeRTutors</title>
+</head>
+
+<body>
+    <header>
+        <a href="/" class="logo">WeRTutors</a>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="@Url.Action("Dashboard", "Admin")" class="elements">
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li><a href="/manage-employees">Employees</a></li>
+            <li><a href="/ats-system">ATS System</a></li>
+            <li><a href="/reports">Reports</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer>
+        2024 WeRTutors. All rights reserved.
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
