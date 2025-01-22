@@ -100,6 +100,25 @@ namespace PROG7312POEPART1
             }
         }
 
+        private void drpService_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Service_Request_Status srs = new Service_Request_Status();
+
+                //Opens the main menu
+                srs.Show();
+
+                //Closes the send feedback window.
+                Close();
+            }
+            catch (Exception ex)
+            {
+                //Error message if an error occurs.
+                MessageBox.Show("Please inform one of the developers about the following error:\n" + ex.ToString(), "ERROR");
+            }
+        }
+
         //Method to check validity of email
         private bool emailIsValid(string email)
         {
@@ -107,27 +126,36 @@ namespace PROG7312POEPART1
             email.ToLower();
 
             //If the email contains an @, the user will enter the if statement.
-            if (email.Contains("@")){
+            if (email.Contains("@"))
+            {
 
                 //Gets the email suffix.
                 string emailService = email.Substring(email.IndexOf("@"));
 
                 //If the email suffix is anyone of these email services, the user has a valid email address.
                 if (email.Contains("@gmail.com") || (email.Contains("@live.co.za") || email.Contains("@yahoo.com") || email.Contains("@vcconnect.edu.za")))
-                {                                         
+                {
                     return true;
-                } 
+                }
                 else
-                {      
+                {
                     //If the suffix is incorrect/is not a support email address then the email address is invalid.
                     return false;
                 }
-            } 
+            }
             else
             {
                 //If the email doesn't contain an @, the email address is invalid.
                 return false;
             }
-        }        
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit the application?", "Exit Application", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+        }
     }
 }

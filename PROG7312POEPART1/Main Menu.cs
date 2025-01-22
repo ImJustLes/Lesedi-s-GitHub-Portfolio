@@ -43,7 +43,7 @@ namespace PROG7312POEPART1
             try
             {
                 Send_Feedback send_Feedback = new Send_Feedback();
-                
+
                 //Opens the send feedback window
                 send_Feedback.Show();
 
@@ -70,7 +70,30 @@ namespace PROG7312POEPART1
                 //Error message if an error occurs.
                 MessageBox.Show("Please inform one of the developers about the following error:\n" + ex.ToString(), "ERROR");
             }
-            
+
+        }
+
+        private void btn_req_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Service_Request_Status srs = new Service_Request_Status();
+                srs.Show();
+                Hide();
+            }
+            catch (Exception ex)
+            {
+                //Error message if an error occurs.
+                MessageBox.Show("Please inform one of the developers about the following error:\n" + ex.ToString(), "ERROR");
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit the application?", "Exit Application", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
         }
     }
 }

@@ -31,11 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             btn_report = new System.Windows.Forms.Button();
             btnFeedback = new System.Windows.Forms.Button();
-            gbButtons = new System.Windows.Forms.GroupBox();
-            btn_req = new System.Windows.Forms.Button();
             btn_events = new System.Windows.Forms.Button();
             label4 = new System.Windows.Forms.Label();
-            gbButtons.SuspendLayout();
+            btn_req = new System.Windows.Forms.Button();
+            btnExit = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
             // btn_report
@@ -62,29 +61,6 @@
             btnFeedback.UseVisualStyleBackColor = true;
             btnFeedback.Click += btnFeedback_Click;
             // 
-            // gbButtons
-            // 
-            gbButtons.Controls.Add(btn_req);
-            gbButtons.Location = new System.Drawing.Point(241, 322);
-            gbButtons.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            gbButtons.Name = "gbButtons";
-            gbButtons.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            gbButtons.Size = new System.Drawing.Size(314, 68);
-            gbButtons.TabIndex = 5;
-            gbButtons.TabStop = false;
-            gbButtons.Text = "COMING SOON...";
-            // 
-            // btn_req
-            // 
-            btn_req.Enabled = false;
-            btn_req.Location = new System.Drawing.Point(0, 26);
-            btn_req.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            btn_req.Name = "btn_req";
-            btn_req.Size = new System.Drawing.Size(314, 29);
-            btn_req.TabIndex = 3;
-            btn_req.Text = "Service Request Status";
-            btn_req.UseVisualStyleBackColor = true;
-            // 
             // btn_events
             // 
             btn_events.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
@@ -108,15 +84,40 @@
             label4.TabIndex = 9;
             label4.Text = "MAIN MENU";
             // 
+            // btn_req
+            // 
+            btn_req.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            btn_req.Location = new System.Drawing.Point(241, 322);
+            btn_req.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btn_req.Name = "btn_req";
+            btn_req.Size = new System.Drawing.Size(314, 60);
+            btn_req.TabIndex = 3;
+            btn_req.Text = "Service Request Status";
+            btn_req.UseVisualStyleBackColor = true;
+            btn_req.Click += btn_req_Click;
+            // 
+            // btnExit
+            // 
+            btnExit.BackColor = System.Drawing.Color.Red;
+            btnExit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnExit.Location = new System.Drawing.Point(241, 464);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new System.Drawing.Size(314, 52);
+            btnExit.TabIndex = 25;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
             ClientSize = new System.Drawing.Size(800, 562);
+            Controls.Add(btnExit);
+            Controls.Add(btn_req);
             Controls.Add(btn_events);
             Controls.Add(label4);
-            Controls.Add(gbButtons);
             Controls.Add(btnFeedback);
             Controls.Add(btn_report);
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
@@ -124,7 +125,6 @@
             Name = "Form1";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Main Menu";
-            gbButtons.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -132,10 +132,10 @@
         #endregion
         private System.Windows.Forms.Button btn_report;
         private System.Windows.Forms.Button btnFeedback;
-        private System.Windows.Forms.GroupBox gbButtons;
         private System.Windows.Forms.Button btn_events;
-        private System.Windows.Forms.Button btn_req;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btn_req;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

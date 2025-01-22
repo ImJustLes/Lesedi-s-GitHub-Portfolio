@@ -114,10 +114,11 @@ namespace PROG7312POEPART1
         private List<EventsAndAnnouncements> SearchEvents(string keyword)
         {
             return eventQueue.UnorderedItems
-                .Where(e => e.Element.Title.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
-                            e.Element.Description.Contains(keyword, StringComparison.OrdinalIgnoreCase))
-                .Select(e => e.Element)
-                .ToList();
+                    .Where(e => (e.Element.Title.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
+                                e.Element.Description.Contains(keyword, StringComparison.OrdinalIgnoreCase)) &&
+                                IsWithinDateRange(e.Element.Date))
+                    .Select(e => e.Element)
+                    .ToList();
         }
 
         //Adds the events into the priority queue, dictionary and unique dates get added into a hashSet
@@ -233,6 +234,28 @@ namespace PROG7312POEPART1
                     }
                 }
 
+                // Date-based scoring
+                if (IsWithinDateRange(evt.Date))
+                {
+                    // Give additional score for events within the selected date range
+                    score += 2;
+
+                    // Give higher score for events closer to the start date
+                    var daysFromStart = (evt.Date.Date - dtpStartDate.Value.Date).TotalDays;
+                    if (daysFromStart <= 7) // Within first week
+                    {
+                        score += 3;
+                    }
+                    else if (daysFromStart <= 14) // Within second week
+                    {
+                        score += 2;
+                    }
+                    else if (daysFromStart <= 21) // Within third week
+                    {
+                        score += 1;
+                    }
+                }
+
                 if (score > 0)
                 {
                     evt.RecommendationScore = score;
@@ -273,6 +296,55 @@ namespace PROG7312POEPART1
             Report_Issues_Page report_Issues_Page = new Report_Issues_Page();
             report_Issues_Page.Show();
             Close();
+        }
+
+        private void serviceRequestStatusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Service_Request_Status srs = new Service_Request_Status();
+                srs.Show();
+                Hide();
+            }
+            catch (Exception ex)
+            {
+                //Error message if an error occurs.
+                MessageBox.Show("Please inform one of the developers about the following error:\n" + ex.ToString(), "ERROR");
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit the application?", "Exit Application", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+        }
+
+        private void dtpStartDate_ValueChanged(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearch.Text;
+            var searchResults = SearchEvents(searchTerm);
+            DisplayFilteredEvents(searchResults);
+            RecommendEvents(searchTerm);
+        }
+
+        private void dtpEndDate_ValueChanged(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearch.Text;
+            var searchResults = SearchEvents(searchTerm);
+            DisplayFilteredEvents(searchResults);
+            RecommendEvents(searchTerm);
+        }
+
+        private bool IsWithinDateRange(DateTime eventDate)
+        {
+            // Strip time component for date comparison
+            var eventDateOnly = eventDate.Date;
+            var startDateOnly = dtpStartDate.Value.Date;  // Assuming dateTimePicker1 is your start date
+            var endDateOnly = dtpEndDate.Value.Date;    // Assuming dateTimePicker2 is your end date
+
+            return eventDateOnly >= startDateOnly && eventDateOnly <= endDateOnly;
         }
     }
 }

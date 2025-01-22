@@ -47,6 +47,12 @@
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             lstRecommendations = new System.Windows.Forms.ListBox();
+            btnExit = new System.Windows.Forms.Button();
+            dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            process1 = new System.Diagnostics.Process();
             toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,7 +64,7 @@
             // 
             // txtDescription
             // 
-            txtDescription.Location = new System.Drawing.Point(589, 285);
+            txtDescription.Location = new System.Drawing.Point(589, 359);
             txtDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtDescription.Name = "txtDescription";
             txtDescription.ReadOnly = true;
@@ -69,7 +75,7 @@
             // lstSearchResults
             // 
             lstSearchResults.FormattingEnabled = true;
-            lstSearchResults.Location = new System.Drawing.Point(90, 238);
+            lstSearchResults.Location = new System.Drawing.Point(90, 312);
             lstSearchResults.Name = "lstSearchResults";
             lstSearchResults.Size = new System.Drawing.Size(375, 164);
             lstSearchResults.TabIndex = 3;
@@ -98,7 +104,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label6.Location = new System.Drawing.Point(84, 185);
+            label6.Location = new System.Drawing.Point(84, 259);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(116, 35);
             label6.TabIndex = 17;
@@ -108,7 +114,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label1.Location = new System.Drawing.Point(589, 232);
+            label1.Location = new System.Drawing.Point(589, 306);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(113, 35);
             label1.TabIndex = 18;
@@ -162,10 +168,10 @@
             // 
             // serviceRequestStatusToolStripMenuItem
             // 
-            serviceRequestStatusToolStripMenuItem.Enabled = false;
             serviceRequestStatusToolStripMenuItem.Name = "serviceRequestStatusToolStripMenuItem";
             serviceRequestStatusToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
             serviceRequestStatusToolStripMenuItem.Text = "Service Request Status";
+            serviceRequestStatusToolStripMenuItem.Click += serviceRequestStatusToolStripMenuItem_Click;
             // 
             // label2
             // 
@@ -180,7 +186,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label3.Location = new System.Drawing.Point(84, 436);
+            label3.Location = new System.Drawing.Point(84, 510);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(219, 35);
             label3.TabIndex = 21;
@@ -189,17 +195,71 @@
             // lstRecommendations
             // 
             lstRecommendations.FormattingEnabled = true;
-            lstRecommendations.Location = new System.Drawing.Point(90, 474);
+            lstRecommendations.Location = new System.Drawing.Point(90, 548);
             lstRecommendations.Name = "lstRecommendations";
             lstRecommendations.Size = new System.Drawing.Size(375, 124);
             lstRecommendations.TabIndex = 22;
+            // 
+            // btnExit
+            // 
+            btnExit.BackColor = System.Drawing.Color.Red;
+            btnExit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnExit.Location = new System.Drawing.Point(619, 688);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new System.Drawing.Size(149, 52);
+            btnExit.TabIndex = 23;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
+            // 
+            // dtpStartDate
+            // 
+            dtpStartDate.Location = new System.Drawing.Point(152, 196);
+            dtpStartDate.Name = "dtpStartDate";
+            dtpStartDate.Size = new System.Drawing.Size(259, 27);
+            dtpStartDate.TabIndex = 24;
+            dtpStartDate.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            dtpStartDate.ValueChanged += dtpStartDate_ValueChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(56, 201);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(90, 20);
+            label4.TabIndex = 25;
+            label4.Text = "Date Range:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label5.Location = new System.Drawing.Point(424, 201);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(26, 20);
+            label5.TabIndex = 26;
+            label5.Text = "To";
+            // 
+            // dtpEndDate
+            // 
+            dtpEndDate.Location = new System.Drawing.Point(460, 196);
+            dtpEndDate.Name = "dtpEndDate";
+            dtpEndDate.Size = new System.Drawing.Size(263, 27);
+            dtpEndDate.TabIndex = 27;
+            dtpEndDate.Value = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
+            dtpEndDate.ValueChanged += dtpEndDate_ValueChanged;
             // 
             // LocalEventsAndAnnouncements
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
-            ClientSize = new System.Drawing.Size(915, 731);
+            ClientSize = new System.Drawing.Size(915, 753);
+            Controls.Add(dtpEndDate);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(dtpStartDate);
+            Controls.Add(btnExit);
             Controls.Add(lstRecommendations);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -239,5 +299,11 @@
         private System.Windows.Forms.ToolStripMenuItem serviceRequestStatusToolStripMenuItem;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox lstRecommendations;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.DateTimePicker dtpStartDate;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dtpEndDate;
+        private System.Diagnostics.Process process1;
     }
 }

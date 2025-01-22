@@ -58,6 +58,7 @@
             label7 = new System.Windows.Forms.Label();
             btnClearMedia = new System.Windows.Forms.Button();
             label8 = new System.Windows.Forms.Label();
+            btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)ReportIssuesNavigator).BeginInit();
             ReportIssuesNavigator.SuspendLayout();
             SuspendLayout();
@@ -176,10 +177,10 @@
             // 
             // drpReq
             // 
-            drpReq.Enabled = false;
             drpReq.Name = "drpReq";
             drpReq.Size = new System.Drawing.Size(314, 26);
             drpReq.Text = "Service Request Status";
+            drpReq.Click += drpReq_Click;
             // 
             // toolStripSeparator2
             // 
@@ -307,12 +308,25 @@
             label8.TabIndex = 17;
             label8.Text = "(optional)";
             // 
+            // btnExit
+            // 
+            btnExit.BackColor = System.Drawing.Color.Red;
+            btnExit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnExit.Location = new System.Drawing.Point(596, 608);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new System.Drawing.Size(149, 52);
+            btnExit.TabIndex = 24;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
+            // 
             // Report_Issues_Page
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
             ClientSize = new System.Drawing.Size(801, 691);
+            Controls.Add(btnExit);
             Controls.Add(ReportIssuesNavigator);
             Controls.Add(label8);
             Controls.Add(btnClearMedia);
@@ -371,5 +385,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnClearMedia;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnExit;
     }
 }

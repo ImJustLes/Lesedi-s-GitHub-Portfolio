@@ -45,6 +45,7 @@
             drpService = new System.Windows.Forms.ToolStripMenuItem();
             toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             label4 = new System.Windows.Forms.Label();
+            btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)bindingNavigator1).BeginInit();
             bindingNavigator1.SuspendLayout();
             SuspendLayout();
@@ -162,10 +163,10 @@
             // 
             // drpService
             // 
-            drpService.Enabled = false;
             drpService.Name = "drpService";
             drpService.Size = new System.Drawing.Size(312, 26);
             drpService.Text = "Service Request Status";
+            drpService.Click += drpService_Click;
             // 
             // toolStripSeparator1
             // 
@@ -183,12 +184,25 @@
             label4.TabIndex = 8;
             label4.Text = "FEEDBACK";
             // 
+            // btnExit
+            // 
+            btnExit.BackColor = System.Drawing.Color.Red;
+            btnExit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnExit.Location = new System.Drawing.Point(621, 465);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new System.Drawing.Size(149, 52);
+            btnExit.TabIndex = 24;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
+            // 
             // Send_Feedback
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
             ClientSize = new System.Drawing.Size(800, 562);
+            Controls.Add(btnExit);
             Controls.Add(label4);
             Controls.Add(bindingNavigator1);
             Controls.Add(txtDescription);
@@ -226,5 +240,6 @@
         private System.Windows.Forms.ToolStripMenuItem drpEvents;
         private System.Windows.Forms.ToolStripMenuItem drpService;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnExit;
     }
 }
