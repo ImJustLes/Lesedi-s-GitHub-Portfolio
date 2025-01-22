@@ -1,3 +1,12 @@
+The main purpose of this project was to create a municipal Windows Form application for South Africans. There are 4 features:
+
+* Report Issues: You can report issues by typing in a location, selecting the category that your issue falls under, a description describing the issue and an optional file you can select to send.
+* Local Events and Announcements: This is a page where you can search, select and view different events/announcements happening around the country. Theres an advanced algorithm that reccomends events and announcements depening on how you searched and what event/announcement you interacted with.
+* Service Request Status: You can view and track different on-going services that are happening around the country. 
+* Feedback: You can send feedback to the developers concerning anything about the application.
+
+The application is able to function nation wide with efficiency, is due to the use of advanced data structures to be able to store and manage the data in each respective feature. More reasons and elaborations about the choice and use of each data structure is further down the ReadMe file.
+
 SYSTEM MINIMUM REQUIREMENT
 
 OS Windows 1011
