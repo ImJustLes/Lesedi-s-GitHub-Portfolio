@@ -22,4 +22,5 @@ I have skills in/with:
 * Visual Studio 2022 Community Edition
 * Visual Studio Code
 
-So far, I have only done school related projects but I do plan on adding and/or doing projects outside of college for myself. I do have one in mind.
+So far, I have only done school related projects but I do plan on adding and/or doing projects outside of college for myself.
+
