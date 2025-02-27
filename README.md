@@ -1,56 +1,3 @@
-<style>
-:root {
-    --dark_blue: #1a237e;
-    --pale_blue: #3f51b5;
-    --accent: #7986cb;
-    --background_blue: #e8eaf6;
-    --text: #121212;
-  }
-  
-  body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--background_blue);
-    color: var(--text);
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  nav {
-    background-color: var(--dark_blue);
-    padding: 10px 0;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  nav ul li {
-    margin: 0 10px;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  #, ## {
-    color: var(--dark_blue);
-  }
-</style>
-#APDS 7311 Task 1- Banking International
-
-
 ##Table of Contents
 
 
@@ -66,6 +13,7 @@
 
 ##Description
 Banking International is a customer oriented banking that prioritises security for users when paming international transactions. Users are able to login and view previous payments and make payments that will be approved by the bank employees. 
+The web app contains does all operations using a RESTful-API using Node.js while the frontend was made using ReactJS. I focused mainly on the RESTful-API and some of the security measures in place to protect requests made with the API.
 
 The following security measures have been taken into consideration for the appliation:
   - Load Balancing
