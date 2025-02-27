@@ -13,7 +13,7 @@
 
 ##Description
 Banking International is a customer oriented banking that prioritises security for users when paming international transactions. Users are able to login and view previous payments and make payments that will be approved by the bank employees. 
-The web app contains does all operations using a RESTful-API using Node.js while the frontend was made using ReactJS. I focused mainly on the RESTful-API and some of the security measures in place to protect requests made with the API.
+The web app contains does all operations using a RESTful-API using Node.js while the frontend was made using ReactJS. I focused mainly on the RESTful-API and some of the security measures in place to protect requests made with the API. I can definitely reflect on this and see how it could have been improved. Like, using a Service layer to handle database operations and making cleaner code.
 
 The following security measures have been taken into consideration for the appliation:
   - Load Balancing
