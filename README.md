@@ -15,7 +15,7 @@ I have skills in/with:
 * MongoDB
 * Android Studio (Kotlin and XML)
 * Firebase
-* Google Maps
+* APIs
 * Object-Orientated Programming
 * Design Patterns
 * Advanced Data Structures
