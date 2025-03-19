@@ -19,11 +19,13 @@ public class CleanUpController {
 
     private CleanUpService cleanUpService;
 
+    //Instantiating the object to access CleanUp Service CRUD methods
     @Autowired
     public CleanUpController(CleanUpService cleanUpService){
         this.cleanUpService = cleanUpService;
     }
 
+    //Gets all the clean ups by location
     @GetMapping("/{location}")
     private ResponseEntity<List<CleanUp>> getCleanUpsFromLocation(@PathVariable String location){
 
@@ -46,6 +48,7 @@ public class CleanUpController {
         }
     }
 
+    //Saves the clean up into the database
     @PostMapping(APIService.SAVE_URL)
     private ResponseEntity<CleanUp> addCleanUp(@Valid @RequestBody CleanUp cleanUp){
 
@@ -53,6 +56,7 @@ public class CleanUpController {
         return new ResponseEntity<>(newCleanup, HttpStatus.OK);
     }
 
+    //Updates the clean up by id with the new CleanUp information
     @PutMapping(APIService.UPDATE_URL)
     private ResponseEntity<CleanUp> updateCleanUp(@PathVariable Long id, @Valid @RequestBody CleanUp newCleanUp){
 
@@ -65,6 +69,7 @@ public class CleanUpController {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
+    //Deletes a clean up, by id, from the database.
     @DeleteMapping(APIService.DELETE_URL)
     private ResponseEntity<HttpStatus> deleteCleanUp(@PathVariable Long id){
 
