@@ -1,12 +1,12 @@
 package com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.controller;
 
 import com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.model.Waste;
-import com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.repo.WasteRepo;
+import com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.service.APIService;
+import com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.service.WasteService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,21 +16,26 @@ import java.util.Optional;
 * which means database operations can't be done because the repo doesn't work. */
 //@Validated
 @RestController
+@RequestMapping(APIService.API_URL + "/waste")
 public class WasteController {
+
+    private WasteService wasteService;
 
     //Instantiating the waste repository to perform database operations in the controller
     @Autowired
-    private WasteRepo wasteRepo;
+    private WasteController(WasteService wasteService){
+        this.wasteService = wasteService;
+    }
 
     //Gets all the saved waste from the database
-    @GetMapping("/waste")
+    @GetMapping()
     private ResponseEntity<List<Waste>> getAllWaste()
     {
         try{
 
             List<Waste> wasteList = new ArrayList<>();
 
-            wasteRepo.findAll().forEach(wasteList::add);
+            wasteList.addAll(wasteService.getAll());
 
             if(wasteList.isEmpty()){
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -42,10 +47,10 @@ public class WasteController {
     }
 
     //Gets a specific waste by ID from the database.
-    @GetMapping("/waste/{id}")
+    @GetMapping("/{id}")
     private ResponseEntity<Waste> getWaste(@PathVariable Long id){
 
-        Optional<Waste> wasteOptional = wasteRepo.findById(id);
+        Optional<Waste> wasteOptional = wasteService.getByID(id);
 
         if(wasteOptional.isPresent()){
             return new ResponseEntity<>(wasteOptional.get(), HttpStatus.OK);
@@ -55,37 +60,31 @@ public class WasteController {
     }
 
     //Saves a waste from the database
-    @PostMapping("/waste/save")
+    @PostMapping(APIService.SAVE_URL)
     private ResponseEntity<Waste> addWaste(@Valid @RequestBody Waste waste)
     {
-        Waste savedWaste = wasteRepo.save(waste);
-
+        Waste savedWaste = wasteService.save(waste);
         return new ResponseEntity<>(savedWaste, HttpStatus.OK);
     }
 
     //Updates the current waste, selected by ID, from the database with the new inputted information.
-    @PutMapping("/waste/update/{id}")
+    @PutMapping(APIService.UPDATE_URL)
     private ResponseEntity<Waste> updateWaste(@PathVariable Long id, @Valid @RequestBody Waste newWaste)
     {
-        Optional<Waste> oldWaste = wasteRepo.findById(id);
+        Waste updatedWaste = wasteService.update(id, newWaste);
 
-        if(oldWaste.isPresent()){
-            Waste updatedWaste = oldWaste.get();
-            updatedWaste.setName(newWaste.getName());
-            updatedWaste.setType(newWaste.getType());
-            updatedWaste.setWeight(newWaste.getWeight());
+        if(updatedWaste != null){
 
-            Waste wasteData = wasteRepo.save(updatedWaste);
-            return new ResponseEntity<>(wasteData, HttpStatus.OK);
+            return new ResponseEntity<>(updatedWaste, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     //Deletes the waste, chosen by ID
-    @DeleteMapping("/waste/delete/{id}")
+    @DeleteMapping(APIService.DELETE_URL)
     private ResponseEntity<HttpStatus> deleteWaste(@PathVariable Long id)
     {
-        wasteRepo.deleteById(id);
+        wasteService.deleteByID(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

@@ -2,6 +2,9 @@ package com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.controller;
 
 import com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.model.DisposalGuideline;
 import com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.repo.DisposalGuidelineRepo;
+import com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.service.APIService;
+import com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.service.CleanUpService;
+import com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.service.DisposalGuidelineService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,19 +20,24 @@ import java.util.Optional;
  * which means database operations can't be done because the repo doesn't work. */
 //@Validated
 @RestController
+@RequestMapping(APIService.API_URL + "/guidelines")
 public class DisposalGuidelineController {
 
     //Instantiating the waste repository to perform database operations in the controller
+    private DisposalGuidelineService guidelineService;
+
     @Autowired
-    private DisposalGuidelineRepo guidelineRepo;
+    public DisposalGuidelineController(DisposalGuidelineService guidelineService){
+        this.guidelineService = guidelineService;
+    }
 
     //Gets all the disposal guidelines of a given type from the database.
-    @GetMapping("/waste/{type}/guidelines")
+    @GetMapping("/{type}")
     private ResponseEntity<List<DisposalGuideline>> getGuidelines(@PathVariable String type){
 
         try{
 
-            List<DisposalGuideline> allGuidelines = guidelineRepo.findAll();
+            List<DisposalGuideline> allGuidelines = guidelineService.getAll();
             List<DisposalGuideline> guidelineList = new ArrayList<>();
 
             for (DisposalGuideline guideline : allGuidelines) {
@@ -47,40 +55,31 @@ public class DisposalGuidelineController {
     }
 
     //Saves a new disposal guideline into the database.
-    @PostMapping("/waste/guidelines/save")
+    @PostMapping(APIService.SAVE_URL)
     private ResponseEntity<DisposalGuideline> addGuideline(@Valid @RequestBody DisposalGuideline guideline)
     {
-        guideline.setType(guideline.getType().toLowerCase());
-        DisposalGuideline newGuideline = guidelineRepo.save(guideline);
-
+        DisposalGuideline newGuideline = guidelineService.save(guideline);
         return new ResponseEntity<>(newGuideline, HttpStatus.OK);
     }
 
     //Updates a disposal guideline with the given ID with the new guideline data.
-    @PutMapping("/waste/guidelines/update/{id}")
+    @PutMapping(APIService.UPDATE_URL)
     private ResponseEntity<DisposalGuideline> updateGuideline(@PathVariable Long id, @Valid @RequestBody DisposalGuideline newGuideline)
     {
-        Optional<DisposalGuideline> oldGuideline = guidelineRepo.findById(id);
+        DisposalGuideline updatedGuideline = guidelineService.update(id, newGuideline);
 
-        if(oldGuideline.isPresent()){
+        if(updatedGuideline != null){
 
-            newGuideline.setType(newGuideline.getType().toLowerCase());
-            DisposalGuideline updatedGuideline = oldGuideline.get();
-            updatedGuideline.setDescription(newGuideline.getDescription());
-            updatedGuideline.setType(newGuideline.getType());
-
-            DisposalGuideline guidelineData = guidelineRepo.save(updatedGuideline);
-            return new ResponseEntity<>(guidelineData, HttpStatus.OK);
+            return new ResponseEntity<>(updatedGuideline, HttpStatus.OK);
         }
-
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     //Deletes a disposal guideline by the chosen ID from the database.
-    @DeleteMapping("/waste/guidelines/delete/{id}")
+    @DeleteMapping(APIService.DELETE_URL)
     private ResponseEntity<HttpStatus> deleteGuideline(@PathVariable Long id)
     {
-        guidelineRepo.deleteById(id);
+        guidelineService.deleteByID(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

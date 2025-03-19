@@ -1,31 +1,35 @@
 package com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.controller;
 
 import com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.model.CleanUp;
-import com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.repo.CleanUpRepo;
+import com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.service.APIService;
+import com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.service.CleanUpService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 //@Validated
 @RestController
+@RequestMapping(APIService.API_URL + "/cleanup")
 public class CleanUpController {
 
-    @Autowired
-    private CleanUpRepo cleanUpRepo;
+    private CleanUpService cleanUpService;
 
-    @GetMapping("/waste/{location}/cleanup")
+    @Autowired
+    public CleanUpController(CleanUpService cleanUpService){
+        this.cleanUpService = cleanUpService;
+    }
+
+    @GetMapping("/{location}")
     private ResponseEntity<List<CleanUp>> getCleanUpsFromLocation(@PathVariable String location){
 
         try{
 
-            List<CleanUp> allCleanUps = cleanUpRepo.findAll();
+            List<CleanUp> allCleanUps = cleanUpService.getAll();
             List<CleanUp> cleanUpList = new ArrayList<>();
 
             for (CleanUp cleanUp : allCleanUps) {
@@ -42,41 +46,29 @@ public class CleanUpController {
         }
     }
 
-    @PostMapping("/waste/cleanup/save")
+    @PostMapping(APIService.SAVE_URL)
     private ResponseEntity<CleanUp> addCleanUp(@Valid @RequestBody CleanUp cleanUp){
 
-        cleanUp.setLocation(cleanUp.getLocation().toLowerCase());
-        CleanUp newCleanup = cleanUpRepo.save(cleanUp);
+        CleanUp newCleanup = cleanUpService.save(cleanUp);
         return new ResponseEntity<>(newCleanup, HttpStatus.OK);
     }
 
-    @PutMapping("/waste/cleanup/update/{id}")
+    @PutMapping(APIService.UPDATE_URL)
     private ResponseEntity<CleanUp> updateCleanUp(@PathVariable Long id, @Valid @RequestBody CleanUp newCleanUp){
 
-        Optional<CleanUp> oldCleanUp = cleanUpRepo.findById(id);
+        CleanUp updatedCleanUp = cleanUpService.update(id, newCleanUp);
 
-        if(oldCleanUp.isPresent()){
+        if(updatedCleanUp != null){
 
-            if(newCleanUp.getCollectedJunk() > oldCleanUp.get().getCollectedJunk()){
-                CleanUp updatedCleanup = oldCleanUp.get();
-                updatedCleanup.setLocation(newCleanUp.getLocation());
-                updatedCleanup.setDescription(newCleanUp.getDescription());
-                updatedCleanup.setTotalJunk(newCleanUp.getTotalJunk());
-                updatedCleanup.setCollectedJunk(newCleanUp.getCollectedJunk());
-
-                CleanUp cleanUpData = cleanUpRepo.save(updatedCleanup);
-                return new ResponseEntity<>(cleanUpData, HttpStatus.OK);
-            }
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(updatedCleanUp, HttpStatus.OK);
         }
-
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
-    @DeleteMapping("/waste/cleanup/delete/{id}")
+    @DeleteMapping(APIService.DELETE_URL)
     private ResponseEntity<HttpStatus> deleteCleanUp(@PathVariable Long id){
 
-        cleanUpRepo.deleteById(id);
+        cleanUpService.deleteByID(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
