@@ -5,6 +5,7 @@ import com.enviro.assessment.grad001.lesedimaela.Waste.REST_API.api.model.Dispos
 import java.util.List;
 import java.util.Optional;
 
+//Mainly from creating new Service Classes
 public abstract class Service<T> {
 
     public abstract List<T> getAll();
