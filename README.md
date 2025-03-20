@@ -8,14 +8,14 @@ Backend development with languages such as C#, has always been my strength. When
 I have skills in/with:
 
 * ASP.NET MVC Application
-* .NET Framework Applications (Windows Presentation Foundation(WPF) and Windows Form)
+* .NET Framework Applications (Windows Presentation Foundation[WPF] and Windows Form)
 * SQL Sever Management
 * Microsoft Azure
 * Oracle Database
 * MongoDB
 * Android Studio (Kotlin and XML)
 * Firebase
-* APIs
+* API intergration & Creation
 * Object-Orientated Programming
 * Design Patterns
 * Advanced Data Structures
@@ -24,6 +24,7 @@ I have skills in/with:
 * Node.JS
 * ReactJS
 * Cyber-Security
-
-So far, I have only done school related projects but I do plan on adding and/or doing projects outside of college for myself.
+* Springboot Framework (REST-API)
+* Java
+* Postman
 
