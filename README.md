@@ -27,4 +27,5 @@ I have skills in/with:
 * Springboot Framework (REST-API)
 * Java
 * Postman
+* JavaScript
 
